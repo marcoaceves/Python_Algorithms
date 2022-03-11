@@ -30,35 +30,23 @@ print(skyline([-1,1,1,7,3,9]))
 
 # zip it
 def zipit(arr,arr2):
-    new_arr = []
-    temp =arr[0]
-    high = 0
+    newnew=[]
 
-    temp1=0
     for i in range(len(arr)):
-        if arr[i] > high:
-            high = arr[i]
+        newnew.append(arr[i])
     for i in range(len(arr2)):
-        if arr2[i] > high:
-            high = arr2[i]
+        newnew.append(arr2[i])
 
-    low=high
 
-    for i in range(len(arr)):
-        if arr[i] < low:
-            low = arr[i]
-    for i in range(len(arr2)):
-        if arr2[i] < low:
-            low = arr2[i]
-    new_arr.append(low)
 
-    for i in range(len(arr)):
-        if arr[i] > low < high :
-            temp = arr[i]
-            new_arr.append(temp)
+    for i in range(0, len(newnew)):
+        for j in range(i+1, len(newnew)):
+            if(newnew[i] > newnew[j]):
+                temp = newnew[i];
+                newnew[i] = newnew[j];
+                newnew[j] = temp;
 
-    print("high:",high)
-    print("low:",low)
-    print(new_arr)
+    return newnew
 
-zipit([10,2,3,5],[6,7,4])
+print(zipit([4,15,100],[10,20,30,40]))
+
