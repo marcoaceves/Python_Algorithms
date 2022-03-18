@@ -26,7 +26,7 @@ def get_digits(digits):
     new_string=''
     for i in digits:
         array.append (ord(i))
-    # print(array)
+    print(array)
 
     for i in array:
         if i <= 57 and (i-48)>=0:
@@ -49,7 +49,6 @@ def acronym(string):
 
     acronym=string[0]
     remove=' '
-
 
 
     for i in range(1,len(string)):
