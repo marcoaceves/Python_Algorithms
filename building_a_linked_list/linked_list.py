@@ -25,9 +25,25 @@ class SLL():
             runner = runner.next
         return self
 
+    # retunr value of front
+    def front_value(self):
+
+        print(self.head.value)
+
+    # delete front
+    def delete_front(self):
+        if(self.head != None):
+            temp = self.head
+            self.head = self.head.next
+            temp=None
+
+
 
 new_sll = SLL(Node(1))
 new_sll.add_front(2).add_front(4).add_front(22).add_front(43).add_front(7)
+new_sll.display()
+new_sll.front_value()
+new_sll.delete_front()
 new_sll.display()
 
 
