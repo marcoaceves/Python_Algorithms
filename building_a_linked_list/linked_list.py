@@ -13,14 +13,12 @@ class SLL():
     # contains value
     def contains(self, val):
         runner = self.head
+        bol = False
         while(runner):
             if runner.value == val:
-                print(True)
-            else:
-                print(False)
-
+                bol =True
             runner = runner.next
-        return self
+        print(bol)
 
 
     # add to front
@@ -64,34 +62,53 @@ class SLL():
             temp=None
 
     # if contains value delete
-    def contains_delete(self, val):
+    def contains_delete_min(self, val):
+
+        runner = self.head
+        while(runner):
+            temp = 0
+            if runner.next:
+                if runner.value== val:
+                    pass
+                elif runner.next.value == val:
+                    temp = runner.next
+                    runner.next = temp.next
+                    self.add_front(val)
+            runner = runner.next
+        return self
+    # if contains value delete
+    def contains_delete_max(self, val):
+
 
         runner = self.head
         while(runner):
             if runner.next:
+                if runner.value == val:
+                    self.head = runner.next
                 if runner.next.value == val:
                     temp = runner.next
                     runner.next = temp.next
             runner = runner.next
         return self
 
+
+
     # move min to front
     def min_to_front(self):
         runner = self.head
-        count=0
+
         temp = runner.value
         while(runner):
             if runner.next:
                 if temp > runner.next.value :
-                    count+=1
+
                     temp=runner.next.value
                     print('temp',temp)
-                else:
-                    count+=1
+
             runner = runner.next
         print(temp, 'is your lowest value')
-        self.contains_delete(temp)
-        self.add_front(temp)
+        self.contains_delete_min(temp)
+
 
         print('')
 
@@ -104,7 +121,7 @@ class SLL():
 
 
             runner = runner.next
-        self.contains_delete(max1)
+        self.contains_delete_max(max1)
         self.push_back(max1)
         print(max1,'is max value')
 
@@ -121,14 +138,14 @@ class SLL():
 
 
 new_sll = SLL(Node(2))
-new_sll.add_front(1).add_front(4).add_front(22).add_front(43).add_front(7)
+new_sll.add_front(1).add_front(4).add_front(22).add_front(7).add_front(43)
 # new_sll.display()
 # new_sll.front_value()
 # new_sll.delete_front()
 new_sll.display()
-# new_sll.contains(7)
-# new_sll.number_of_nodes()
-new_sll.min_to_front()
+# new_sll.contains(22)
+new_sll.number_of_nodes()
+# new_sll.min_to_front()
 new_sll.display()
 new_sll.max_to_back()
 
