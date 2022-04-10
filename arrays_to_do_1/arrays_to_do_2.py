@@ -80,3 +80,19 @@ def elim_min_max(arr):
 
     print(arr, 'elimmaxmin')
 elim_min_max(arr)
+
+
+# Replicate JavaScript's concat(). Create a standalone function that accepts two arrays. Return a new array containing the first array's elements, followed by the second array's elements. Do not alter the original arrays. Ex.: arrConcat( ['a','b'], [1,2] ) should return new array ['a','b',1,2].
+
+def concatpy(arr1,arr2):
+    new_arr=[]
+
+    for i in arr1:
+        new_arr.append(i)
+    for j in arr2:
+        new_arr.append(j)
+    print(new_arr)
+
+
+
+concatpy(['a','b'], [1,2] )
