@@ -49,6 +49,19 @@ rotate_arr_left(arr,1)
 
 # Alan is good at breaking secret codes. One method is to eliminate values that lie outside of a specific known range. Given arr and values min and max, retain only the array values between min and max. Work in-place: return the array you are given, with values in original order. No built-in array functions.
 
+def elim(arr,min,max):
+
+
+    for x in list(arr):
+        if x < min or x > max:
+            arr.remove(x)
+    print(arr, 'elim')
+elim([1, 5, 4, 3, 2, 6],3,5)
+
+
+
+
+# elim min and max
 def elim_min_max(arr):
     min=arr[0]
     max= arr[0]
@@ -58,13 +71,12 @@ def elim_min_max(arr):
             max=arr[i+1]
         if arr[i]> arr[i+1]:
             min=arr[i+1]
-    print(min,max)
-    for x in range(len(arr)-1):
-        if arr[x]== min:
-            arr.pop(x)
-    for x in range(len(arr)-1):
-        if arr[x]== max:
-            arr.pop(x)
+    for x in list(arr):
+        if x== min:
+            arr.remove(x)
+    for x in list(arr):
+        if x== max:
+            arr.remove(x)
 
-    print(arr)
+    print(arr, 'elimmaxmin')
 elim_min_max(arr)
