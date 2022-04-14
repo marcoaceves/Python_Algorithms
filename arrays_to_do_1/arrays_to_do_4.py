@@ -41,6 +41,26 @@ print(remove_range([20,30,40,50,60,70],2,4))
 
 # You will be given an array of numbers. After every tenth element, add an additional element containing the sum of those ten values. If the array does not end aligned evenly with ten elements, add one last sum that includes those last elements not yet been included in one of the earlier sums. Given the array [1,2,1,2,1,2,1,2,1,2,1,2,1,2], change it to [1,2,1,2,1,2,1,2,1,2,15,1,2,1,2,6]
 
+def sums(arr):
+    loops, remainder = divmod(len(arr), 10)
+    intermediate_sum = 0
+    j = 0
+
+    while j < loops:
+        for i in range(10+j):
+            intermediate_sum += arr[i]
+        arr.insert(10, intermediate_sum)
+        j += 1
+
+
+    remainder_sum = sum(arr[(loops*10+loops):])
+    arr.insert((loops*10+loops+remainder), remainder_sum)
+
+    return arr
+
+print(sums([1,2,1,2,1,2,1,2,1,2,1,2,1,2]))
+
+
 
 
 
