@@ -73,7 +73,7 @@ print(sums([1,2,1,2,1,2,1,2,1,2,1,2,1,2]))
 def double_trouble(arr):
     double=arr
     new_arr=[]
-    for i in range(len(arr)-1):
+    for i in range(len(arr)):
         new_arr.append(arr[i])
         new_arr.append(double[i])
     return new_arr
@@ -86,5 +86,19 @@ print(double_trouble([4,"Ulysses",42,False]))
 # Zip It
 
 # Create a standalone function that accepts two arrays and combines their values sequentially into a new array, at alternating indices starting with first array. Extra values from either array should be included afterward. Given [1,2] and [10,20,30,40], return new array containing [1,10,2,20,30,40].
+
+
+def double_trouble(arr,arr2):
+    new_arr=[]
+    for i in range(len(arr)):
+        new_arr.append(arr[i])
+    for i in range(len(arr2)):
+        new_arr.append(arr2[i])
+    return new_arr
+
+
+
+
+print(double_trouble([1,2],[10,20,30,40]))
 
 # Second: combine the two arrays’ values into the first array, instead of into a new array. Much more fun!
