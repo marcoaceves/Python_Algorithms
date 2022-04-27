@@ -70,10 +70,18 @@ print(sums([1,2,1,2,1,2,1,2,1,2,1,2,1,2]))
 
 # Create a function that changes a given array to list each original element twice, retaining original order. Convert [4,"Ulysses",42,false] to [4,4,"Ulysses","Ulysses",42,42,false,false].
 
+def double_trouble(arr):
+    double=arr
+    new_arr=[]
+    for i in range(len(arr)-1):
+        new_arr.append(arr[i])
+        new_arr.append(double[i])
+    return new_arr
 
 
 
 
+print(double_trouble([4,"Ulysses",42,False]))
 
 # Zip It
 
