@@ -90,7 +90,7 @@ print(double_trouble([4,"Ulysses",42,False]))
 
 def double_trouble(arr,arr2):
     new_arr=[]
-    for i in range(len(arr)):
+    while arr:
         new_arr.append(arr[i])
     for i in range(len(arr2)):
         new_arr.append(arr2[i])
@@ -99,6 +99,7 @@ def double_trouble(arr,arr2):
 
 
 
-print(double_trouble([1,2],[10,20,30,40]))
+x=zip([1,2],[10,20,30,40])
+print(tuple(x))
 
 # Second: combine the two arrays’ values into the first array, instead of into a new array. Much more fun!
